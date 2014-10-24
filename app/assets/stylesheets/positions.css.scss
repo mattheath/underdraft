@@ -2,12 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'variables';
+
 .graph {
   min-height: 200px;
+  margin-bottom: 0px;
  }
- .button-container {
+
+.button-container {
   margin-top: 20px;
- }
+}
 
 .success-row, .no-need {
   margin-top: 30px;
@@ -15,8 +19,51 @@
 .borrow-amount, .positive-balance {
   color: green
 }
-.warning {
-  color: red;
+
+.overdraft-row {
+  margin-top: -30px;
+}
+
+$alert-border-width: 4px;
+.overdraft-alert {
+  border: solid $alert-border-width $alert-border-color;
+  /*background: rgba(255,74,41, 1);*/
+  border-radius: 10px;
+  padding: 15px;
+  /*color: $body-bg;*/
+  color: $alert-text-color;
+  background: $alert-bg-color;
+  margin-top: 0px;
+
+  &:after, &:before {
+	content: "";
+	position: absolute;
+	border-left: 35px solid transparent;
+	border-right: 15px solid transparent;
+	bottom: 100%;
+	right: 10%;
+  }
+
+  &:before {
+	border-bottom: 35px solid $alert-border-color;
+	margin-bottom: 0px;
+  }
+
+  &:after {
+	border-bottom: 35px solid $alert-bg-color;
+	margin-bottom: -($alert-border-width);
+	z-index: 1;
+  }
+}
+
+.borrow-button {
+  margin-top: 15px;
+  background-color: $light-red;
+}
+
+.fees {
+  margin-bottom: 0px;
+  color: $light-red;
 }
 
 

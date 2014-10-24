@@ -1,15 +1,23 @@
-<div class="row">
-  <div class="small-12 medium-8 columns small-centered">
-    <p><span class="warning">Warning!</span> Your spending pattern indicates you will run out of funds in your current account on [date]. To cover your monthly spending, you may require a loan of <span class='borrow-amount'>[Amount]</span>.</p> 
+<div class="row overdraft-row">
+  <div class="columns">
+    <div class="overdraft-alert">
+      <p>
+      Your spending pattern indicates you will run out of funds in your current account on 27/10. To cover your monthly spending, you may require a loan of £500.
+      </p>
+
+      <%= link_to 'Borrow £500 until 1/11', positions_success_path, class: 'borrow-button button radius expand' %>      
+
+      <p class="fees">
+        A fee of £15 will be debited along with the £500 from your account on 1/11.
+      </p>
+    </div>
   </div>
 </div>
 <div class="row button-container">
-  <div class="small-12 medium-8 columns text-center small-centered">
-    <%= link_to 'Borrow [Amount]', positions_success_path, class: 'button radius' %>    
+  <div class="columns">
   </div>  
 </div>
 <div class="row">
   <div class="small-12 medium-8 columns small-centered text-center">
-    <p>[repayment amount] will be due on [due date] and will be automatically deducted from your current account.</p> 
   </div>
 </div>

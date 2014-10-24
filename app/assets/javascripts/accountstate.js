@@ -12,7 +12,8 @@ $(function () {
 
     $('#graph').highcharts({
         chart: {
-            type: 'spline'
+            type: 'spline',
+            backgroundColor: 'transparent'
         },
         title: {
             text: '',
