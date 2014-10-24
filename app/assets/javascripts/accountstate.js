@@ -30,15 +30,23 @@ $(function () {
             tickLength: 0
         },
         yAxis: {
-            text: "",
+            title: {
+                enabled: false
+            },
             lineWidth: 0,
+            gridLineWidth: 0,
             minorGridLineWidth: 0,
             lineColor: 'transparent',
             labels: {
                 enabled: false
             },
             minorTickLength: 0,
-            tickLength: 0
+            tickLength: 0,
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: "#333"
+            }]
         },
         legend: {
             enabled: false
@@ -57,8 +65,22 @@ $(function () {
             }
         },
         series: [{
+            name: 'Credit',
+            color: "#333",
+            data: current
+        },{
             name: 'Monies',
-            data: seriesData
+            color: '#999',
+            data: predicted,
+            dashStyle: 'shortdot'
+        },{
+            name: 'Monies',
+            color: '#C02222',
+            data: dangerzone
+        },{
+            name: 'Monies',
+            color: '#22C022',
+            data: actioned
         }]
     });
 
