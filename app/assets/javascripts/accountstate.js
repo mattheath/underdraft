@@ -80,11 +80,11 @@ $(function () {
             dashStyle: 'shortdot'
         },{
             name: 'Monies',
-            color: '#C02222',
+            color: '#8E2800',
             data: dangerzone
         },{
             name: 'Monies',
-            color: '#22C022',
+            color: '#468966',
             data: actioned
         }]
     });
