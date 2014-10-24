@@ -1,0 +1,22 @@
+// Place all the styles related to the positions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.graph {
+  border: 1px solid black;
+  min-height: 300px;
+ }
+ .button-container {
+  margin-top: 20px;
+ }
+
+.success-row, .no-need {
+  margin-top: 30px;
+}
+.borrow-amount, .positive-balance {
+  color: green
+}
+.warning {
+  color: red;
+}
+

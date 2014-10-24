@@ -1,0 +1,15 @@
+<div class="row">
+  <div class='small-12 medium-8 columns small-centered'>
+    <h3>Account Balance Projection</h1>
+  </div>
+</div>
+<div class="row">
+  <div class='small-12 medium-8 columns small-centered graph'>
+    <h2>Graph placeholder</h2>
+  </div>
+</div>
+<% if @projecting_overdraft %>
+  <%= render 'overdraft_needed' %>
+<% else %>
+  <%= render 'no_overdraft_needed' %>
+<% end %>

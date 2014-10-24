@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="small-12 medium-8 columns small-centered">
+    <p><span class="warning">Warning!</span> Your spending pattern indicates you will run out of funds in your current account on [date]. To cover your monthly spending, you may require a loan of <span class='borrow-amount'>[Amount]</span>.</p> 
+  </div>
+</div>
+<div class="row button-container">
+  <div class="small-12 medium-8 columns text-center small-centered">
+    <%= link_to 'Borrow [Amount]', positions_success_path, class: 'button radius' %>    
+  </div>  
+</div>
+<div class="row">
+  <div class="small-12 medium-8 columns small-centered text-center">
+    <p>[repayment amount] will be due on [due date] and will be automatically deducted from your current account.</p> 
+  </div>
+</div>
