@@ -27,7 +27,12 @@ $(function () {
                 enabled: false
             },
             minorTickLength: 0,
-            tickLength: 0
+            tickLength: 0,
+            plotLines: [{
+                value: 18,
+                width: 1,
+                color: "#333"
+            }]
         },
         yAxis: {
             title: {
