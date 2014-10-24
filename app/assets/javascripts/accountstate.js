@@ -12,7 +12,9 @@ $(function () {
 
     $('#graph').highcharts({
         chart: {
-            type: 'spline'
+            type: 'spline',
+            spacingLeft: 0,
+            spacingRight: 0
         },
         title: {
             text: '',
