@@ -53,6 +53,9 @@ $(function () {
                 color: "#333"
             }]
         },
+        tooltip: {
+            enabled: false
+        },
         legend: {
             enabled: false
         },
@@ -77,6 +80,13 @@ $(function () {
                 },
                 marker: {
                     enabled: false
+                }
+            },
+            series: {
+                states: {
+                    hover: {
+                        enabled: false
+                    }
                 }
             }
         },
