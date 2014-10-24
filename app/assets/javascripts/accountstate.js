@@ -42,9 +42,9 @@ for (var i = 0; i < 150; i++) {
     prev = newNumber;
 }
 
-// Set extent
+// Set extents
 x.domain(d3.extent(data, function(d) { return d.x; }));
-y.domain([0, 150]);
+y.domain(d3.extent(data, function(d) { return d.y; }));
 
 // x-axis
 // svg.append("g")
