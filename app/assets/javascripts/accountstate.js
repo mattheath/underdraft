@@ -67,6 +67,17 @@ $(function () {
                 marker: {
                     enabled: false
                 }
+            },
+            area: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
             }
         },
         series: [{
@@ -75,13 +86,14 @@ $(function () {
             data: current
         },{
             name: 'Monies',
-            color: '#999',
-            data: predicted,
-            dashStyle: 'shortdot'
+            type: 'area',
+            color: '#8E2800',
+            data: dangerzone
         },{
             name: 'Monies',
             color: '#8E2800',
-            data: dangerzone
+            data: predicted,
+            dashStyle: 'shortdot'
         },{
             name: 'Monies',
             color: '#468966',
