@@ -8,6 +8,8 @@ actioned = [[31,0], [32,1957.071364]]
 // GO!
 $(function () {
 
+    var forecastLabelOffset = $('#graph').width() * 0.5625;
+
     $('#graph').highcharts({
         chart: {
             type: 'spline'
@@ -55,6 +57,16 @@ $(function () {
         },
         tooltip: {
             enabled: false
+        },
+        labels: {
+            items : [{
+                html : 'Forecast',
+                style : {
+                    left : forecastLabelOffset,
+                    top : '10px',
+                    fontSize : '20px'
+                }
+            }]
         },
         legend: {
             enabled: false
