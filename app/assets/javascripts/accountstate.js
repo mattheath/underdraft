@@ -8,9 +8,13 @@ actioned = [[31,0], [32,1957.071364]]
 // GO!
 $(function () {
 
+    var forecastLabelOffset = $('#graph').width() * 0.5625;
+
     $('#graph').highcharts({
         chart: {
-            type: 'spline'
+            type: 'spline',
+            spacingLeft: 0,
+            spacingRight: 0
         },
         title: {
             text: '',
@@ -27,7 +31,12 @@ $(function () {
                 enabled: false
             },
             minorTickLength: 0,
-            tickLength: 0
+            tickLength: 0,
+            plotLines: [{
+                value: 18,
+                width: 1,
+                color: "#333"
+            }]
         },
         yAxis: {
             title: {
@@ -48,6 +57,19 @@ $(function () {
                 color: "#333"
             }]
         },
+        tooltip: {
+            enabled: false
+        },
+        labels: {
+            items : [{
+                html : 'Forecast',
+                style : {
+                    left : forecastLabelOffset,
+                    top : '10px',
+                    fontSize : '20px'
+                }
+            }]
+        },
         legend: {
             enabled: false
         },
@@ -62,6 +84,24 @@ $(function () {
                 marker: {
                     enabled: false
                 }
+            },
+            area: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            },
+            series: {
+                states: {
+                    hover: {
+                        enabled: false
+                    }
+                }
             }
         },
         series: [{
@@ -70,16 +110,17 @@ $(function () {
             data: current
         },{
             name: 'Monies',
-            color: '#999',
+            type: 'area',
+            color: '#8E2800',
+            data: dangerzone
+        },{
+            name: 'Monies',
+            color: '#8E2800',
             data: predicted,
             dashStyle: 'shortdot'
         },{
             name: 'Monies',
-            color: '#C02222',
-            data: dangerzone
-        },{
-            name: 'Monies',
-            color: '#22C022',
+            color: '#468966',
             data: actioned
         }]
     });
