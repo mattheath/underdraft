@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require d3
+//= require highcharts
+//= require highcharts/highcharts-more
 
 $(function(){ $(document).foundation(); });

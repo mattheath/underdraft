@@ -1,59 +1,65 @@
-// Terrible graph plot
+seriesData = [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
 
-var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+$(function () {
 
-var parseDate = d3.time.format("%d-%b-%y").parse;
-
-var x = d3.time.scale()
-    .range([0, width]);
-
-var y = d3.scale.linear()
-    .range([height, 0]);
-
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom");
-
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left");
-
-var line = d3.svg.line()
-    .x(function(d) { return x(d.x); })
-    .y(function(d) { return y(d.y); });
-
-var svg = d3.select("#graph").append("svg")
-    .attr("width", $("#graph").width())
-    .attr("height", $("#graph").height())
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-// Make some fake data that decreases randomly
-var data = [];
-var prev = 100 + Math.random() * 20
-for (var i = 0; i < 150; i++) {
-    var newNumber = prev + Math.random() * 20 - 10;
-    data.push({
-      x: i,
-      y: newNumber
+    $('#graph').highcharts({
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: '',
+        },
+        subtitle: {
+            text: '',
+        },
+        xAxis: {
+            text: "",
+            lineWidth: 0,
+            minorGridLineWidth: 0,
+            lineColor: 'transparent',
+            labels: {
+                enabled: false
+            },
+            minorTickLength: 0,
+            tickLength: 0
+        },
+        yAxis: {
+            text: "",
+            lineWidth: 0,
+            minorGridLineWidth: 0,
+            lineColor: 'transparent',
+            labels: {
+                enabled: false
+            },
+            minorTickLength: 0,
+            tickLength: 0
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        series: [{
+            name: 'Monies',
+            data: seriesData
+        }]
     });
-    prev = newNumber;
-}
 
-// Set extents
-x.domain(d3.extent(data, function(d) { return d.x; }));
-y.domain(d3.extent(data, function(d) { return d.y; }));
+    $("#graph svg text tspan").each(function() {
+        if ($(this).text() == "Highcharts.com") {
+            $(this).hide()
+        }
+    });
 
-// x-axis
-// svg.append("g")
-//     .attr("class", "x axis")
-//     .attr("transform", "translate(0," + height + ")")
-//     .call(xAxis);
-
-// Add line to graph
-svg.append("path")
-    .datum(data)
-    .attr("class", "line")
-    .attr("d", line);
+});
