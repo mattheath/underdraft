@@ -7,6 +7,8 @@
 .graph {
   min-height: 200px;
   margin-bottom: 0px;
+  margin-left: -3px;
+  width: 102%;
  }
 
 .button-container {
@@ -21,7 +23,7 @@
 }
 
 .overdraft-row {
-  margin-top: -30px;
+  margin-top: -0px;
 }
 
 $alert-border-width: 4px;
@@ -57,14 +59,33 @@ $alert-border-width: 4px;
 }
 
 .borrow-button {
-  margin-top: 15px;
-  background-color: $light-red;
+  margin-top: 0px;
+  background-color: darken($green,20%);
+  color: lighten($green, 10%);
+  font-weight: bold;
+  font-size: 24px;
+  box-shadow: 0px 3px 0px rgba(0,0,0,0.2);
+  &:hover {
+    color: $green;
+    background-color: darken($green,20%); }
 }
 
 .fees {
   margin-bottom: 0px;
-  color: $light-red;
+  color: rgba(00,0,0,0.5);
 }
 
+
+.logo {
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+  margin-top: -3px;
+}
+
+.top-bar h1 a {
+  color: white !important;
+  opacity: 0.7;
+}
 
 // Graph related CSS
