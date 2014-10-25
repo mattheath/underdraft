@@ -1,5 +1,7 @@
 applications:
-- disk_quota: 1024M
+- services:
+  -  underdraft_production
+  disk_quota: 1024M
   host: underdraft
   name: underdraft
   path: .
