@@ -101,29 +101,20 @@ actioned = [[31,0], [32,1957.071364], [33, 1900]]
         },
         tooltip: {
             enabled: true,
-            useHTML: true,
             backgroundColor: "#FFB03B",
+
+            followPointer: false,
+            followTouchMove: false,
             borderWidth: 0,
             formatter: function() {
-              if(this.x > 1 && this.x < 4) {
+              if(this.x > 0 && this.x < 4) {
                 return "<div class='pay-tooltip'>1/10 Payday: £2,107</div>"
               }
-              if(this.x > 4 && this.x < 7) {
+              if(this.x > 4 && this.x < 9) {
                 return "<div class='rent-tooltip'>3/10 Rent: £800</div>"
               }
               return null
             }
-        },
-        labels: {
-            items : [{
-                html : 'Forecast',
-                style : {
-                    color: 'rgba(255,255,255,0.5)',
-                    left : forecastLabelOffset,
-                    top : '10px',
-                    fontSize : '20px'
-                }
-            }]
         },
         legend: {
             enabled: false
