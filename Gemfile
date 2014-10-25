@@ -44,3 +44,6 @@ gem "highcharts-rails", "~> 3.0.0"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development do
+  gem "sqlite3"
+end
