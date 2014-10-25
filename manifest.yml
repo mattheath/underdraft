@@ -1,0 +1,11 @@
+applications:
+- services:
+  -  underdraft_production
+  disk_quota: 1024M
+  host: underdraft
+  name: underdraft
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 256M
+
