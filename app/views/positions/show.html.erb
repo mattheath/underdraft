@@ -17,9 +17,24 @@
 
 <div class="row page3">
   <div class="columns">
+    <div class="cool">
+      <%= image_tag "cool.png" %>
+      <div class="labely">
+        It <br>worked!
+      </div>
+    </div>
     <div class="success-alert">
-        <h1>Success! [Amount] is being transferred to your account!</h1>
-        <h2 class='subheader'>The loan repayment amount of [Amount2] will automatically be deducted from your account on [due date]</h2>
+      <p>
+        <%=@amount%> is being transferred to your account!</h1>
+      <p>
+
+      <p>
+        The loan repayment amount of <%=@repay_amount%> will automatically be deducted from your account on 1/11.
+      </p>
+      <div class="button radius expand thanks-button">
+        Thank you, underdraft!
+      </div>
+
     </div>
   </div>
 </div>
