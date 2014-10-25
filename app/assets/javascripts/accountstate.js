@@ -1,6 +1,6 @@
 
 // Add sample data
-current = [[0,2190.1],[1,2181.9],[2,2181.9],[3,2181.9],[4,1401.94],[5,388.14],[6,421.27],[7,421.27],[8,413.09],[9,413.09],[10,413.09],[11,413.09],[12,413.09],[13,287.99],[14,287.99],[15,256.39],[16,256.39],[17,256.39],[18,234.19]]
+current = [[0,190.1],[1,181.9],[2,2181.9],[3,2181.9],[4,1401.94],[5,388.14],[6,421.27],[7,421.27],[8,413.09],[9,413.09],[10,413.09],[11,413.09],[12,413.09],[13,287.99],[14,287.99],[15,256.39],[16,256.39],[17,256.39],[18,234.19]]
 predicted = [[18,234.19],[19,151.5225],[20,111.9841667],[21,56.6475],[22,28.765]]
 dangerzone = [[22,28.765],[23,-59.4625],[24,-125.6191667],[25,-140.3033333],[26,-284.7325],[27,-331.0983333],[28,-447.9391667],[29,-481.9441667],[30,-529.445],[31,0]]
 actioned = [[31,0], [32,1957.071364], [33, 1900]]
@@ -16,6 +16,48 @@ actioned = [[31,0], [32,1957.071364], [33, 1900]]
             spacingLeft: 0,
             spacingRight: 0
         },
+        annotations: [{
+          shape: {
+            type: 'circle',
+            params: {
+              r: 8,
+              fill: "#468966",
+              strokeWidth: 0,
+              width: 20,
+              height: 20
+            }
+          },
+          xValue: 2,
+          yValue: 2190,
+        }, {
+          shape: {
+            type: 'circle',
+            params: {
+              r: 8,
+              fill: "#8E2800",
+              fill: "#B64926",
+              strokeWidth: 0,
+              width: 20,
+              height: 20
+            }
+          },
+          xValue: 5,
+          yValue: 388,
+        }, {
+          shape: {
+            type: 'circle',
+            params: {
+              r: 8,
+              fill: "#B64926",
+              strokeWidth: 0,
+              width: 20,
+              height: 20
+            }
+          },
+          xValue: 29.5,
+          yValue: -485,
+
+        }],
         title: {
             text: '',
         },
@@ -58,7 +100,19 @@ actioned = [[31,0], [32,1957.071364], [33, 1900]]
             }]
         },
         tooltip: {
-            enabled: false
+            enabled: true,
+            useHTML: true,
+            backgroundColor: "#FFB03B",
+            borderWidth: 0,
+            formatter: function() {
+              if(this.x > 1 && this.x < 4) {
+                return "<div class='pay-tooltip'>1/10 Payday: £2,107</div>"
+              }
+              if(this.x > 4 && this.x < 7) {
+                return "<div class='rent-tooltip'>3/10 Rent: £800</div>"
+              }
+              return null
+            }
         },
         labels: {
             items : [{

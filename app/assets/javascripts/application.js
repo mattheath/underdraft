@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require highcharts
 //= require highcharts/highcharts-more
+//= require annotations
 
 $(function(){ $(document).foundation(); });
