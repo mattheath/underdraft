@@ -1,7 +1,22 @@
 <div class="row success-row">
-  <div class='small-12 text-center'>
-    <h1>Success! [Amount] is being transferred to your account!</h1>
-    <h2 class='subheader'>The loan repayment amount of [Amount2] will automatically be deducted from your account on [due date]</h2>
+  <div class="columns">
+    <div class="loading-thingy">
+      MAKING IT RAIN ...
+    </div>
+    <div class="success-alert" style="display: none">
+        <h1>Success! [Amount] is being transferred to your account!</h1>
+        <h2 class='subheader'>The loan repayment amount of [Amount2] will automatically be deducted from your account on [due date]</h2>
+
+
+    </div>
   </div>
 </div>
 
+<%=content_for :javascript_includes do%>
+  <script>
+    setTimeout(function(){
+      $(".loading-thingy").hide()
+      $(".success-alert").fadeIn()
+    }, 500)
+  </script>
+<%end%>

@@ -4,6 +4,11 @@
 
 @import 'variables';
 
+nav {
+  padding-top: 20px !important;
+  height: 65px !important;
+}
+
 .graph {
   min-height: 200px;
   margin-bottom: 0px;
@@ -22,10 +27,6 @@
   color: green
 }
 
-.overdraft-row {
-  margin-top: -0px;
-}
-
 $alert-border-width: 4px;
 .overdraft-alert {
   border: solid $alert-border-width $alert-border-color;
@@ -36,6 +37,18 @@ $alert-border-width: 4px;
   color: $alert-text-color;
   background: $alert-bg-color;
   margin-top: 0px;
+
+  opacity: 0;
+  transition: all 0.5s;
+
+  /*transform: scale(0.8) rotate(500deg);*/
+  transform: scale(0.7);
+
+  &.in {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    transform: scale(1);
+  }
 
   &:after, &:before {
 	content: "";
@@ -58,16 +71,37 @@ $alert-border-width: 4px;
   }
 }
 
+.page2 {
+  margin-top: 20px;
+  opacity: 0;
+  transition: all 0.5s;
+  &.in {
+    opacity: 1;
+  }
+}
+
+.page3 {
+  opacity: 0;
+  margin-top: 20px;
+  transition: all 0.5s;
+  &.in {
+    opacity: 1;
+  }
+}
+
 .borrow-button {
   margin-top: 0px;
-  background-color: darken($green,20%);
+  background-color: darken($green,0%);
   color: lighten($green, 10%);
+  color: darken($dark-red, 20%);
+  background-color: $light-red;
   font-weight: bold;
   font-size: 24px;
-  box-shadow: 0px 3px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 0px darken($green, 30%);
   &:hover {
-    color: $green;
-    background-color: darken($green,20%); }
+    color: darken($dark-red, 30%);
+    background-color: $dark-red;
+  }
 }
 
 .fees {
@@ -88,4 +122,44 @@ $alert-border-width: 4px;
   opacity: 0.7;
 }
 
+.success-alert {
+  background: $green;
+  color: darken($green, 20%);
+  border-radius: 10px;
+  padding: 15px;
+  /*color: $body-bg;*/
+  margin-top: 0px;
+}
+
 // Graph related CSS
+
+.tom-logo {
+
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 200px;
+
+  .img-container {
+    padding: 20px;
+    border: solid 40px $green;
+    display: inline-block;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    img {
+      display: inline-block;
+      margin-top: 70px;
+      width: 380px;
+      height: 380px;
+    }
+  }
+
+  .text {
+    text-align: center;
+    font-size: 70px;
+    margin-top: 50px;
+    color: #eee;
+  }
+}
+
+

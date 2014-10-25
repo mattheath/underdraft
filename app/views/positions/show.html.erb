@@ -2,11 +2,36 @@
   <%= javascript_include_tag "accountstate.js" %>
 <% end %>
 
-<div class="row">
+<div class="page1 row">
   <div class='small-12 medium-8 small-centered graph' id="graph"></div>
-</div>
-<% if @projecting_overdraft %>
   <%= render 'overdraft_needed' %>
-<% else %>
-  <%= render 'no_overdraft_needed' %>
-<% end %>
+</div>
+
+<div class="row page2">
+  <div class="columns">
+    <div class="loading-thingy">
+      MAKING IT RAIN ...
+    </div>
+  </div>
+</div>
+
+<div class="row page3">
+  <div class="columns">
+    <div class="success-alert">
+        <h1>Success! [Amount] is being transferred to your account!</h1>
+        <h2 class='subheader'>The loan repayment amount of [Amount2] will automatically be deducted from your account on [due date]</h2>
+    </div>
+  </div>
+</div>
+
+<%#<div class="tom-logo">%>
+
+  <%#<div class="img-container">%>
+    <%#<%= image_tag "logo.png" %>
+  <%#</div> %>
+  <%#<div class="text">%>
+    <%#Underdraft%>
+  <%#</div>%>
+
+<%#</div>%>
+

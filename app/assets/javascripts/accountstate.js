@@ -6,7 +6,6 @@ dangerzone = [[22,28.765],[23,-59.4625],[24,-125.6191667],[25,-140.3033333],[26,
 actioned = [[31,0], [32,1957.071364], [33, 1900]]
 
 // GO!
-$(function () {
 
     var forecastLabelOffset = $('#graph').width() * 0.5625;
 
@@ -135,4 +134,19 @@ $(function () {
         }
     });
 
-});
+
+  setTimeout(function(){
+    $(".overdraft-alert").addClass("in")
+  }, 1000)
+
+
+
+  $(".borrow-button").click(function(){
+    $(".page1").hide()
+    $(".page2").addClass("in")
+    setTimeout(function() {
+      $(".page2").hide()
+      $(".page3").addClass("in")
+    }, 1000)
+  });
+  

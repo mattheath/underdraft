@@ -110,10 +110,11 @@ $body-font-color: #666;
 /*$primary-color: #008CBA;*/
 $primary-color: #468966;
 // $secondary-color: #e7e7e7;
-$alert-border-color: #B64926;
 $alert-border-color: $green;
+$alert-border-color: $yellow;
 $alert-text-color: darken($green, 30%);
 $alert-bg-color: $green;
+$alert-bg-color: $yellow;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
